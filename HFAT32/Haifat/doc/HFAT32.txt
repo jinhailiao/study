@@ -1,0 +1,31 @@
+    HFAT32
+
+HFAT32是我依据FAT标准,按照自己的理解写出来的一个FAT文件系统;
+
+特性:
+1.HFAT32 是一个小型的嵌入式FAT文件系统,可以方便地在nand flash,RAM和SD Card等
+  存储设备上创建FAT文件系统和操作它.
+2.目前支持FAT16/32,支持长文件名.等等...
+
+如有兴趣使用或COPY(仅指学习目的),请注意保持本文和原码的完整性.谢谢.
+如有用于商业目的意愿,请与本人联系.
+Email:jinhailiao@163.com
+
+BUG 报告:jinhailiao@163.com
+
+jinhailiao
+2008.07.04
+
+
+版本信息:
+// v1.0  2008.07.04
+1.基本功能完成.
+
+// v1.1  
+1. 修正与标准不符之处:加入备份的FSINFO.修改了一些BPB值.
+2. 加入基于s3c2410的SDCARD和NAND驱动.
+3. 加入了真实RAM Disk 驱动.
+4. 加入FAT类型检查.
+5. 修正了fopen中chdir失败没free文件块的BUG.
+6. 修正了fread中阅读size大于文件当前剩余size出错的BUG；
+

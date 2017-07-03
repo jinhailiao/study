@@ -1,0 +1,118 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: haifat - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\JINHAI~1.HAI\LOCALS~1\Temp\RSP62.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /I ".\Haifat" /I ".\Haifat\fat" /I ".\Haifat\device" /I ".\Haifat\driver" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /Fp"Debug/haifat.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\learn\HFAT32\Haifat\device\ftdevice.c"
+"E:\learn\HFAT32\Haifat\driver\nand2410.c"
+"E:\learn\HFAT32\Haifat\driver\ramdisk.c"
+"E:\learn\HFAT32\Haifat\driver\ramdisk2.c"
+"E:\learn\HFAT32\Haifat\driver\ramdisk3.c"
+"E:\learn\HFAT32\Haifat\driver\sdi2410.c"
+"E:\learn\HFAT32\Haifat\fat\hfatdent.c"
+"E:\learn\HFAT32\Haifat\fat\hfatfile.c"
+"E:\learn\HFAT32\Haifat\fat\hfatfind.c"
+"E:\learn\HFAT32\Haifat\fat\hfatstr.c"
+"E:\learn\HFAT32\Haifat\fat\hfatsys.c"
+"E:\learn\HFAT32\Haifat\fat\hfatutil.c"
+"E:\learn\HFAT32\Haifat\fssignal.c"
+"E:\learn\HFAT32\Haifat\haiclib.c"
+"E:\learn\HFAT32\Haifat\hfileapi.c"
+"E:\learn\HFAT32\Haifat\hfilesys.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\JINHAI~1.HAI\LOCALS~1\Temp\RSP62.tmp" 
+Creating temporary file "C:\DOCUME~1\JINHAI~1.HAI\LOCALS~1\Temp\RSP63.tmp" with contents
+[
+/nologo /out:"Debug\haifat.lib" 
+.\Debug\ftdevice.obj
+.\Debug\nand2410.obj
+.\Debug\ramdisk.obj
+.\Debug\ramdisk2.obj
+.\Debug\ramdisk3.obj
+.\Debug\sdi2410.obj
+.\Debug\hfatdent.obj
+.\Debug\hfatfile.obj
+.\Debug\hfatfind.obj
+.\Debug\hfatstr.obj
+.\Debug\hfatsys.obj
+.\Debug\hfatutil.obj
+.\Debug\fssignal.obj
+.\Debug\haiclib.obj
+.\Debug\hfileapi.obj
+.\Debug\hfilesys.obj
+]
+Creating command line "link.exe -lib @C:\DOCUME~1\JINHAI~1.HAI\LOCALS~1\Temp\RSP63.tmp"
+<h3>Output Window</h3>
+Compiling...
+ftdevice.c
+nand2410.c
+ramdisk.c
+ramdisk2.c
+ramdisk3.c
+sdi2410.c
+hfatdent.c
+hfatfile.c
+hfatfind.c
+hfatstr.c
+hfatsys.c
+hfatutil.c
+fssignal.c
+haiclib.c
+hfileapi.c
+hfilesys.c
+Creating library...
+<h3>
+--------------------Configuration: malloc - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\JINHAI~1.HAI\LOCALS~1\Temp\RSP64.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /Fp"Debug/malloc.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\learn\HFAT32\Haifat\GB_UNI\gb2uni.c"
+"E:\learn\HFAT32\Haifat\malloc\haimem.c"
+"E:\learn\HFAT32\Haifat\GB_UNI\uni2gb.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\JINHAI~1.HAI\LOCALS~1\Temp\RSP64.tmp" 
+Creating command line "link.exe -lib /nologo /out:"Debug\malloc.lib"  .\Debug\gb2uni.obj .\Debug\haimem.obj .\Debug\uni2gb.obj "
+<h3>Output Window</h3>
+Compiling...
+gb2uni.c
+haimem.c
+uni2gb.c
+Creating library...
+<h3>
+--------------------Configuration: test - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\JINHAI~1.HAI\LOCALS~1\Temp\RSP65.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /I ".\haifat" /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/test.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\learn\HFAT32\test.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\JINHAI~1.HAI\LOCALS~1\Temp\RSP65.tmp" 
+Creating temporary file "C:\DOCUME~1\JINHAI~1.HAI\LOCALS~1\Temp\RSP66.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/test.pdb" /debug /machine:I386 /out:"Debug/test.exe" /pdbtype:sept 
+.\Debug\test.obj
+.\Debug\haifat.lib
+.\Debug\malloc.lib
+]
+Creating command line "link.exe @C:\DOCUME~1\JINHAI~1.HAI\LOCALS~1\Temp\RSP66.tmp"
+<h3>Output Window</h3>
+Compiling...
+test.c
+Linking...
+
+
+
+<h3>Results</h3>
+test.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: haifat - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\JINHAI~1.HAI\LOCALS~1\Temp\RSP2F1.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /I ".\Haifat" /I ".\Haifat\fat" /I ".\Haifat\device" /I ".\Haifat\driver" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /Fp"Debug/haifat.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\learn\HFAT32\Haifat\haiclib.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\JINHAI~1.HAI\LOCALS~1\Temp\RSP2F1.tmp" 
+<h3>Output Window</h3>
+Compiling...
+haiclib.c
+e:\learn\hfat32\haifat\haiclib.c(38) : warning C4090: 'initializing' : different 'const' qualifiers
+e:\learn\hfat32\haifat\haiclib.c(38) : warning C4090: 'initializing' : different 'const' qualifiers
+
+
+
+<h3>Results</h3>
+haiclib.obj - 0 error(s), 2 warning(s)
+</pre>
+</body>
+</html>
