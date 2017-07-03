@@ -1,0 +1,467 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(中华人民共和国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#include ""res\\Hcomm.rc2""  // 非 Microsoft Visual C++ 编辑过的资源\r\n"
+    "#include ""afxres.rc""         // 标准组件\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\Hcomm.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 159, 67
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "关于 Hcomm"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "Version 1.6  2017-05-27",IDC_STATIC,39,10,96,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 2009-2012  Haisoft",IDC_STATIC,39,49,113,
+                    8
+    DEFPUSHBUTTON   "确定",IDOK,125,7,27,14,WS_GROUP
+    LTEXT           "Email:jinhailiao@163.com",IDC_STATIC,39,24,99,8
+    LTEXT           "廖金海        海洋软件工作室",IDC_STATIC,39,37,104,8
+END
+
+IDD_HCOMM_DIALOG DIALOGEX 0, 0, 330, 267
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Hcomm"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "串口设置",IDC_STATIC,7,2,82,83
+    COMBOBOX        IDC_COMBO_PORT,45,12,39,56,CBS_DROPDOWNLIST | 
+                    CBS_DISABLENOSCROLL | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_BAUD,45,26,39,70,CBS_DROPDOWNLIST | 
+                    CBS_DISABLENOSCROLL | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_CHECK,45,41,39,46,CBS_DROPDOWNLIST | 
+                    CBS_DISABLENOSCROLL | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_NUM,45,56,39,52,CBS_DROPDOWNLIST | 
+                    CBS_DISABLENOSCROLL | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_STOP,45,70,39,37,CBS_DROPDOWNLIST | 
+                    CBS_DISABLENOSCROLL | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "高级设置",IDC_STATIC,7,88,82,84
+    CONTROL         "监测串口(&W)",IDC_CHECK_WATCH,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,9,98,56,10
+    CONTROL         "十六进制显示(&H)",IDC_CHECK_HEXSHOW,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,9,112,67,10
+    CONTROL         "十六进制发送(&F)",IDC_CHECK_HEXSEND,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,9,126,66,10
+    CONTROL         "自动发送(&Z)",IDC_CHECK_AUTOSEND,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,9,139,53,10
+    EDITTEXT        IDC_EDIT_SECOND,37,153,33,14,WS_DISABLED
+    GROUPBOX        "电表设置",IDC_STATIC,7,176,83,85
+    CONTROL         "自动组帧(&E)",IDC_CHECK_AUTOFRAME,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,9,186,53,10
+    PUSHBUTTON      "...(&V)",IDC_BUTTON_MSET,64,183,23,14
+    COMBOBOX        IDC_COMBO_RULE,35,199,53,46,CBS_DROPDOWNLIST | 
+                    CBS_DISABLENOSCROLL | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_ADDR,35,215,53,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO_DATAID,40,232,48,54,CBS_DROPDOWNLIST | 
+                    CBS_DISABLENOSCROLL | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "串   口(&P)",IDC_STATIC,10,14,31,8
+    LTEXT           "波特率(&B)",IDC_STATIC,10,29,31,8
+    LTEXT           "校验位(&K)",IDC_STATIC,10,43,31,8
+    LTEXT           "数据位(&N)",IDC_STATIC,10,58,32,8
+    LTEXT           "停止位(&S)",IDC_STATIC,10,72,31,8
+    LTEXT           "规约(&G)",IDC_STATIC_RULE,9,202,25,8
+    LTEXT           "地址(&D)",IDC_STATIC_ADDR,9,218,25,8
+    LTEXT           "数据ID(&I)",IDC_STATIC_DATAID,9,234,30,8
+    LTEXT           "周期(&M)",IDC_STATIC_PERIOD,10,156,26,8,WS_DISABLED
+    LTEXT           "毫秒",IDC_STATIC_SECOND,72,156,15,8,WS_DISABLED
+    CTEXT           "电表",IDC_STATIC_REGNAME,8,248,80,8,WS_DISABLED
+    CONTROL         "",IDC_STATIC_LIGHT,"Static",SS_BITMAP,74,97,13,12
+    GROUPBOX        "操作区",IDC_STATIC_OP,96,212,228,49
+    PUSHBUTTON      "清空接收(&C)",IDC_BUTTON_CLRRECEIVE,100,223,42,14
+    PUSHBUTTON      "清空发送(&R)",IDC_BUTTON_CLRSEND,148,223,42,14
+    PUSHBUTTON      "手动发送(&T)",IDC_BUTTON_MANUALSEND,196,223,43,14
+    PUSHBUTTON      "发送文件(&J)",IDC_BUTTON_SENDFILE,244,223,41,14,
+                    WS_DISABLED
+    PUSHBUTTON      "关于(&A)",IDC_BUTTON_ABOUT,290,223,29,14
+    PUSHBUTTON      "选择文件(&O)",IDC_BUTTON_SELECTFILE,100,243,43,14
+    EDITTEXT        IDC_EDIT_PATH,147,243,173,14,ES_AUTOHSCROLL
+    GROUPBOX        "接收区(&Q)",IDC_STATIC_RECEIVE,96,3,228,148
+    EDITTEXT        IDC_EDIT_RECEIVE,99,12,222,134,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_READONLY | ES_WANTRETURN | 
+                    WS_VSCROLL
+    GROUPBOX        "发送区(&U)",IDC_STATIC_SEND,96,153,228,56
+    EDITTEXT        IDC_EDIT_SEND,99,163,222,42,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_WANTRETURN | WS_VSCROLL
+    CONTROL         "",IDC_PROGRESS_SEND,"msctls_progress32",NOT WS_VISIBLE | 
+                    0x1,124,209,200,6
+    CONTROL         "",IDC_COMM_SPORT,"{648A5600-2C6E-101B-82B6-000000000014}",
+                    WS_TABSTOP,66,134,22,22
+END
+
+IDD_MSET_DLG DIALOGEX 0, 0, 143, 83
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "电表高级设置"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_COMBO_LGRBAUD,65,19,48,59,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "确定",IDOK,103,62,34,14
+    LTEXT           "确认波特率",IDC_STATIC,18,21,46,8
+    GROUPBOX        "兰吉尔表高级设置",IDC_STATIC,6,7,130,33
+    GROUPBOX        "提示",IDC_STATIC,6,44,88,32
+    LTEXT           "    电表数据ID可在meterreg.ini中新加。",IDC_STATIC,10,
+                    56,73,16
+END
+
+IDD_MSET_DLT_DLG DIALOGEX 0, 0, 207, 105
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "电表高级设置"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_COMBO_CTRL_CODE,40,19,120,59,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_FREEZE_MON,47,39,27,59,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_FREEZE_DAY,85,39,27,59,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_FREEZE_HOUR,123,39,27,59,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_FREEZE_MIN,161,39,27,59,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_OP_CODE,40,59,67,14
+    EDITTEXT        IDC_EDIT_PASSWORD,131,59,66,14
+    EDITTEXT        IDC_EDIT_WRITE_DATA,39,80,158,14
+    DEFPUSHBUTTON   "确定",IDOK,168,12,30,14
+    GROUPBOX        "国标97表高级设置",IDC_STATIC_MSET_DLT_NAME,7,7,193,91
+    LTEXT           "控制码",IDC_STATIC,12,21,26,8
+    LTEXT           "操作码",IDC_STATIC_OP_CODE,12,62,26,8
+    LTEXT           "冻结时间",IDC_STATIC_FREEZE_TITLE,12,41,32,8
+    LTEXT           "数  据",IDC_STATIC_DATA_NAME,12,82,24,8
+    LTEXT           "密码",IDC_STATIC_PASSWORD,111,62,16,8
+    LTEXT           "月",IDC_STATIC_FREEZE_MON,76,41,9,8
+    LTEXT           "日",IDC_STATIC_FREEZE_DAY,113,42,9,8
+    LTEXT           "时",IDC_STATIC_FREEZE_HOUR,151,42,9,8
+    LTEXT           "分",IDC_STATIC_FREEZE_MIN,189,41,9,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,2,0,1
+ PRODUCTVERSION 1,2,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080403a8"
+        BEGIN
+            VALUE "CompanyName", "Haisoft Corporation"
+            VALUE "FileDescription", "串口通讯"
+            VALUE "FileVersion", "1.2.0.1"
+            VALUE "InternalName", "Hcomm.exe"
+            VALUE "LegalCopyright", "(C) <Haisoft Corporation>。保留所有权利。"
+            VALUE "OriginalFilename", "Hcomm.exe"
+            VALUE "ProductName", "串口通讯"
+            VALUE "ProductVersion", "1.2.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 936
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 152
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 60
+    END
+
+    IDD_HCOMM_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 323
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 261
+    END
+
+    IDD_MSET_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 136
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 76
+    END
+
+    IDD_MSET_DLT_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 200
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 98
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS 
+BEGIN
+    "A",            IDC_BUTTON_ABOUT,       VIRTKEY, ALT, NOINVERT
+    "C",            IDC_BUTTON_CLRRECEIVE,  VIRTKEY, ALT, NOINVERT
+    "R",            IDC_BUTTON_CLRSEND,     VIRTKEY, ALT, NOINVERT
+    "T",            IDC_BUTTON_MANUALSEND,  VIRTKEY, ALT, NOINVERT
+    "O",            IDC_BUTTON_SELECTFILE,  VIRTKEY, ALT, NOINVERT
+    "J",            IDC_BUTTON_SENDFILE,    VIRTKEY, ALT, NOINVERT
+    "E",            IDC_CHECK_AUTOFRAME,    VIRTKEY, ALT, NOINVERT
+    "Z",            IDC_CHECK_AUTOSEND,     VIRTKEY, ALT, NOINVERT
+    "F",            IDC_CHECK_HEXSEND,      VIRTKEY, ALT, NOINVERT
+    "H",            IDC_CHECK_HEXSHOW,      VIRTKEY, ALT, NOINVERT
+    "W",            IDC_CHECK_WATCH,        VIRTKEY, ALT, NOINVERT
+    "B",            IDC_COMBO_BAUD,         VIRTKEY, ALT, NOINVERT
+    "K",            IDC_COMBO_CHECK,        VIRTKEY, ALT, NOINVERT
+    "I",            IDC_COMBO_DATAID,       VIRTKEY, ALT, NOINVERT
+    "N",            IDC_COMBO_NUM,          VIRTKEY, ALT, NOINVERT
+    "P",            IDC_COMBO_PORT,         VIRTKEY, ALT, NOINVERT
+    "G",            IDC_COMBO_RULE,         VIRTKEY, ALT, NOINVERT
+    "S",            IDC_COMBO_STOP,         VIRTKEY, ALT, NOINVERT
+    "D",            IDC_EDIT_ADDR,          VIRTKEY, ALT, NOINVERT
+    "L",            IDC_EDIT_PATH,          VIRTKEY, ALT, NOINVERT
+    "Q",            IDC_EDIT_RECEIVE,       VIRTKEY, ALT, NOINVERT
+    "M",            IDC_EDIT_SECOND,        VIRTKEY, ALT, NOINVERT
+    "U",            IDC_EDIT_SEND,          VIRTKEY, ALT, NOINVERT
+    "V",            IDC_BUTTON_MSET,        VIRTKEY, ALT, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_HCOMM_DIALOG DLGINIT
+BEGIN
+    IDC_COMBO_PORT, 0x403, 5, 0
+0x4f43, 0x314d, "\000" 
+    IDC_COMBO_PORT, 0x403, 5, 0
+0x4f43, 0x324d, "\000" 
+    IDC_COMBO_PORT, 0x403, 5, 0
+0x4f43, 0x334d, "\000" 
+    IDC_COMBO_PORT, 0x403, 5, 0
+0x4f43, 0x344d, "\000" 
+    IDC_COMBO_PORT, 0x403, 5, 0
+0x4f43, 0x354d, "\000" 
+    IDC_COMBO_PORT, 0x403, 5, 0
+0x4f43, 0x364d, "\000" 
+    IDC_COMBO_PORT, 0x403, 5, 0
+0x4f43, 0x374d, "\000" 
+    IDC_COMBO_PORT, 0x403, 5, 0
+0x4f43, 0x384d, "\000" 
+    IDC_COMBO_PORT, 0x403, 5, 0
+0x4f43, 0x394d, "\000" 
+    IDC_COMBO_PORT, 0x403, 6, 0
+0x4f43, 0x314d, 0x0030, 
+    IDC_COMBO_PORT, 0x403, 6, 0
+0x4f43, 0x314d, 0x0031, 
+    IDC_COMBO_PORT, 0x403, 6, 0
+0x4f43, 0x314d, 0x0032, 
+    IDC_COMBO_BAUD, 0x403, 4, 0
+0x3033, 0x0030, 
+    IDC_COMBO_BAUD, 0x403, 4, 0
+0x3036, 0x0030, 
+    IDC_COMBO_BAUD, 0x403, 5, 0
+0x3231, 0x3030, "\000" 
+    IDC_COMBO_BAUD, 0x403, 5, 0
+0x3432, 0x3030, "\000" 
+    IDC_COMBO_BAUD, 0x403, 5, 0
+0x3834, 0x3030, "\000" 
+    IDC_COMBO_BAUD, 0x403, 5, 0
+0x3639, 0x3030, "\000" 
+    IDC_COMBO_BAUD, 0x403, 6, 0
+0x3931, 0x3032, 0x0030, 
+    IDC_COMBO_BAUD, 0x403, 6, 0
+0x3833, 0x3034, 0x0030, 
+    IDC_COMBO_BAUD, 0x403, 6, 0
+0x3635, 0x3030, 0x0030, 
+    IDC_COMBO_BAUD, 0x403, 6, 0
+0x3735, 0x3036, 0x0030, 
+    IDC_COMBO_BAUD, 0x403, 7, 0
+0x3131, 0x3235, 0x3030, "\000" 
+    IDC_COMBO_CHECK, 0x403, 7, 0
+0xdece, 0xa3d0, 0xe9d1, "\000" 
+    IDC_COMBO_CHECK, 0x403, 7, 0
+0xe6c6, 0xa3d0, 0xe9d1, "\000" 
+    IDC_COMBO_CHECK, 0x403, 7, 0
+0xbcc5, 0xa3d0, 0xe9d1, "\000" 
+    IDC_COMBO_NUM, 0x403, 8, 0
+0x2020, 0xce38, 0x20bb, 0x0020, 
+    IDC_COMBO_NUM, 0x403, 8, 0
+0x2020, 0xce37, 0x20bb, 0x0020, 
+    IDC_COMBO_NUM, 0x403, 8, 0
+0x2020, 0xce36, 0x20bb, 0x0020, 
+    IDC_COMBO_STOP, 0x403, 8, 0
+0x2020, 0xce31, 0x20bb, 0x0020, 
+    IDC_COMBO_STOP, 0x403, 8, 0
+0x2020, 0xce32, 0x20bb, 0x0020, 
+    IDC_COMM_SPORT, 0x376, 102, 0
+0x0013, 0x0000, 0x0043, 0x006f, 0x0070, 0x0079, 0x0072, 0x0069, 0x0067, 
+0x0068, 0x0074, 0x0020, 0x0028, 0x0063, 0x0029, 0x0020, 0x0031, 0x0039, 
+0x0039, 0x0034, 0x0020, 0x4321, 0x1234, 0x0008, 0x0000, 0x03ed, 0x0000, 
+0x03ed, 0x0000, 0x5601, 0x648a, 0x0000, 0x0006, 0x0000, 0x0001, 0x0400, 
+0x0000, 0x0200, 0x0000, 0x2580, 0x0000, 0x0000, 0x0008, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x003f, 0x0000, 0x0001, 0x0000, 
+    0
+END
+
+IDD_MSET_DLG DLGINIT
+BEGIN
+    IDC_COMBO_LGRBAUD, 0x403, 5, 0
+0xd4d7, 0xafb6, "\000" 
+    IDC_COMBO_LGRBAUD, 0x403, 4, 0
+0x3033, 0x0030, 
+    IDC_COMBO_LGRBAUD, 0x403, 4, 0
+0x3036, 0x0030, 
+    IDC_COMBO_LGRBAUD, 0x403, 5, 0
+0x3231, 0x3030, "\000" 
+    IDC_COMBO_LGRBAUD, 0x403, 5, 0
+0x3432, 0x3030, "\000" 
+    IDC_COMBO_LGRBAUD, 0x403, 5, 0
+0x3834, 0x3030, "\000" 
+    IDC_COMBO_LGRBAUD, 0x403, 5, 0
+0x3639, 0x3030, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP_LIGHT        BITMAP                  "res\\lightred.bmp"
+IDB_BITMAP_DARK         BITMAP                  "res\\lightwhite.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 Hcomm(&A)..."
+END
+
+#endif    // 中文(中华人民共和国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE 4, 2
+#pragma code_page(936)
+#include "res\Hcomm.rc2"  // 非 Microsoft Visual C++ 编辑过的资源
+#include "afxres.rc"         // 标准组件
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,561 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0045)http://www.99inf.net/SoftwareDev/VC/12333.htm -->
+<HTML><HEAD><TITLE>关于注册mscomm程序的编写 - VC编程</TITLE>
+<META content=关于注册mscomm程序的编写,编程教程,编程入门,编程网站 name=Keywords>
+<META content=关于注册mscomm程序的编写,编程网,为编程爱好者提供最新编程资料 name=Description>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<STYLE type=text/css>.style1 {
+	COLOR: #0099cc
+}
+</STYLE>
+<LINK href="关于注册mscomm程序的编写 - VC编程.files/DefaultSkin.css" type=text/css 
+rel=stylesheet>
+<SCRIPT language=JavaScript src="关于注册mscomm程序的编写 - VC编程.files/menu.js" 
+type=text/JavaScript></SCRIPT>
+
+<SCRIPT language=JavaScript1.2 src="关于注册mscomm程序的编写 - VC编程.files/stm31.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT language=JavaScript type=text/JavaScript>
+//改变图片大小
+function resizepic(thispic)
+{
+if(thispic.width>700){thispic.height=thispic.height*700/thispic.width;thispic.width=700;} 
+}
+//无级缩放图片大小
+function bbimg(o)
+{
+  var zoom=parseInt(o.style.zoom, 10)||100;
+  zoom+=event.wheelDelta/12;
+  if (zoom>0) o.style.zoom=zoom+'%';
+  return false;
+}
+//双击鼠标滚动屏幕的代码
+var currentpos,timer;
+function initialize()
+{
+timer=setInterval ("scrollwindow ()",30);
+}
+function sc()
+{
+clearInterval(timer);
+}
+function scrollwindow()
+{
+currentpos=document.body.scrollTop;
+window.scroll(0,++currentpos);
+if (currentpos !=document.body.scrollTop)
+sc();
+}
+document.onmousedown=sc
+document.ondblclick=initialize
+
+//更改字体大小
+var status0='';
+var curfontsize=10;
+var curlineheight=18;
+function fontZoomA(){
+  if(curfontsize>8){
+    document.getElementById('fontzoom').style.fontSize=(--curfontsize)+'pt';
+	document.getElementById('fontzoom').style.lineHeight=(--curlineheight)+'pt';
+  }
+}
+function fontZoomB(){
+  if(curfontsize<64){
+    document.getElementById('fontzoom').style.fontSize=(++curfontsize)+'pt';
+	document.getElementById('fontzoom').style.lineHeight=(++curlineheight)+'pt';
+  }
+}
+</SCRIPT>
+
+<META content="MSHTML 6.00.2900.5803" name=GENERATOR></HEAD>
+<BODY onmouseup=document.selection.empty() oncontextmenu="return false" 
+onselectstart="return false" ondragstart="return false" 
+onbeforecopy="return false" oncopy=document.selection.empty() 
+onselect=document.selection.empty()>
+<DIV id=menuDiv 
+style="Z-INDEX: 1000; VISIBILITY: hidden; WIDTH: 1px; POSITION: absolute; HEIGHT: 1px; BACKGROUND-COLOR: #9cc5f8"></DIV>
+<TABLE height=114 cellSpacing=0 cellPadding=0 width=778 align=center 
+background="关于注册mscomm程序的编写 - VC编程.files/top_bg.jpg" border=0>
+  <TBODY>
+  <TR>
+    <TD width=213><A title=网络学院 href="http://www.23book.net/" 
+      target=_blank><IMG height=114 src="关于注册mscomm程序的编写 - VC编程.files/logo.gif" 
+      width=213 border=0></A></TD>
+    <TD>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD align=right colSpan=2>
+            <TABLE cellSpacing=0 cellPadding=0 align=right border=0>
+              <TBODY>
+              <TR>
+                <TD><A href="http://www.99inf.net/Announcelist.asp"><IMG 
+                  height=25 alt=网站公告列表 
+                  src="关于注册mscomm程序的编写 - VC编程.files/Announce_01.jpg" 
+                  border=0></A></TD>
+                <TD class=showa width=280 
+                background="关于注册mscomm程序的编写 - VC编程.files/Announce_02.jpg">
+                  <MARQUEE onmouseover=this.stop() onmouseout=this.start() 
+                  scrollAmount=1 scrollDelay=4 width=430 align="left">
+                  <P>&nbsp;&nbsp;没有公告</P></MARQUEE></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD width="83%" height=80>
+            <SCRIPT language=javascript 
+            src="关于注册mscomm程序的编写 - VC编程.files/1.js"></SCRIPT>
+          </TD>
+          <TD width="17%">
+            <TABLE height=89 cellSpacing=0 cellPadding=0 width=94 
+            background="关于注册mscomm程序的编写 - VC编程.files/topr.gif" border=0>
+              <TBODY>
+              <TR>
+                <TD align=middle colSpan=2>
+                  <TABLE height=56 cellSpacing=0 cellPadding=0 width=79 
+border=0>
+                    <TBODY>
+                    <TR>
+                      <TD align=middle width=26><IMG height=13 
+                        src="关于注册mscomm程序的编写 - VC编程.files/arrows.gif" 
+                      width=13></TD>
+                      <TD width=68><A class=Bottom 
+                        href="javascript:window.external.addFavorite('http://www.23book.net','网络学院');">加入收藏</A></TD></TR>
+                    <TR>
+                      <TD align=middle><IMG height=13 
+                        src="关于注册mscomm程序的编写 - VC编程.files/arrows.gif" 
+                      width=13></TD>
+                      <TD><A class=Bottom 
+                        onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.23book.net');" 
+                        href="http://www.99inf.net/SoftwareDev/VC/12333.htm#">设为首页</A></TD></TR>
+                    <TR>
+                      <TD align=middle><IMG height=13 
+                        src="关于注册mscomm程序的编写 - VC编程.files/arrows.gif" 
+                      width=13></TD>
+                      <TD><A class=Bottom 
+                      href="mailto:ysy.sh@163.com">联系站长</A></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width=778 align=center border=0>
+  <TBODY>
+  <TR>
+    <TD class=menu_s align=middle>&nbsp;|&nbsp;<A class=Channel 
+      href="http://www.99inf.net/Index.htm">网站首页</A>&nbsp;|&nbsp;<A 
+      class=Channel href="http://www.99inf.net/DB/Index.htm" 
+      target=_self>数据库教程</A>&nbsp;|&nbsp;<A class=Channel 
+      href="http://www.99inf.net/Program/Index.htm" 
+      target=_self>web编程</A>&nbsp;|&nbsp;<A class=Channel 
+      href="http://www.99inf.net/Server/Index.htm" 
+      target=_self>服务器</A>&nbsp;|&nbsp;<A class=Channel2 
+      href="http://www.99inf.net/SoftwareDev/Index.htm" 
+      target=_self>程序设计</A>&nbsp;|&nbsp;</TD></TR>
+  <TR>
+    <TD class=top_nav_menu>
+      <SCRIPT language=JavaScript1.2 
+      src="关于注册mscomm程序的编写 - VC编程.files/ShowClass_Menu.js" 
+      type=text/JavaScript></SCRIPT>
+    </TD></TR>
+  <TR>
+    <TD><IMG height=7 src="关于注册mscomm程序的编写 - VC编程.files/menu_bg2.jpg" 
+      width=778></TD></TR>
+  <TR>
+    <TD background="关于注册mscomm程序的编写 - VC编程.files/addr.jpg" height=21>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD align=middle width="5%"><IMG height=17 
+            src="关于注册mscomm程序的编写 - VC编程.files/arrows2.gif" width=16></TD>
+          <TD width="95%">您现在的位置：&nbsp;<A class=LinkPath 
+            href="http://www.23book.net/">网络学院</A>&nbsp;&gt;&gt;&nbsp;<A 
+            class=LinkPath 
+            href="http://www.99inf.net/SoftwareDev/Index.htm">程序设计</A>&nbsp;&gt;&gt;&nbsp;<A 
+            class=LinkPath 
+            href="http://www.99inf.net/SoftwareDev/VC/Index.htm">VC编程</A>&nbsp;&gt;&gt;&nbsp;文章正文</TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD background="关于注册mscomm程序的编写 - VC编程.files/addr_line.jpg" 
+  height=4></TD></TR></TBODY></TABLE><!-- ********网页中部代码开始******** --><!--文章显示代码开始-->
+<TABLE class=center_tdbgall style="WORD-BREAK: break-all" cellSpacing=0 
+cellPadding=0 width=760 align=center border=0>
+  <TBODY>
+  <TR>
+    <TD align=middle colSpan=2>
+      <SCRIPT language=javascript 
+      src="关于注册mscomm程序的编写 - VC编程.files/11.js"></SCRIPT>
+    </TD></TR>
+  <TR>
+    <TD colSpan=2>
+      <TABLE class=main_title_760 style="WORD-BREAK: break-all" cellSpacing=0 
+      cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=center width="4%">&nbsp;</TD>
+          <TD width="65%"><STRONG>关于注册mscomm程序的编写</STRONG></TD>
+          <TD width="18%"><FONT 
+            color=#ff0000>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            color=#009999></FONT></FONT></TD>
+          <TD align=right width="13%"><FONT color=#ff0000>【字体：<A 
+            href="javascript:fontZoomA();"><FONT color=#ff0000>小</FONT></A> <A 
+            href="javascript:fontZoomB();"><FONT 
+            color=#ff0000>大</FONT></A>】</FONT></TD></TR></TBODY></TABLE></TD></TR>
+  <TR vAlign=center align=middle>
+    <TD class=main_ArticleTitle style="WORD-BREAK: break-all" colSpan=2 
+    height=50>关于注册mscomm程序的编写</TD></TR>
+  <TR vAlign=center align=middle>
+    <TD class=main_ArticleSubheading style="WORD-BREAK: break-all" 
+    colSpan=2></TD></TR>
+  <TR align=middle>
+    <TD class=Article_tdbgall colSpan=2>作者：佚名&nbsp;&nbsp;&nbsp;&nbsp;文章来源：<A 
+      href="http://www.99inf.net/ShowCopyFrom.asp?ChannelID=1004&amp;SourceName=不详">不详</A>&nbsp;&nbsp;&nbsp;&nbsp;点击数：
+      <SCRIPT language=javascript src=""></SCRIPT>
+      &nbsp;&nbsp;&nbsp;&nbsp;更新时间：2007-7-1&nbsp;&nbsp;&nbsp;&nbsp;<A 
+      title=收藏的网页将被永久地保存到新浪ViVi收藏夹http://vivi.sina.com.cn 
+      href="javascript:d=document;t=d.selection?(d.selection.type!='None'?d.selection.createRange().text:''):(d.getSelection?d.getSelection():'');void(vivi=window.open('http://vivi.sina.com.cn/collect/icollect.php?pid=2008&amp;title='+escape(d.title)+'&amp;url='+escape(d.location.href)+'&amp;desc='+escape(t),'vivi','scrollbars=no,width=480,height=480,left=75,top=20,status=no,resizable=yes'));vivi.focus();"><IMG 
+      src="关于注册mscomm程序的编写 - VC编程.files/vivi_coop1.gif" align=absMiddle 
+      border=0></A></TD></TR>
+  <TR>
+    <TD class=main_tdbg_760 id=fontzoom style="WORD-BREAK: break-all" vAlign=top 
+    colSpan=2 height=300>
+      <TABLE cellSpacing=0 cellPadding=10 align=left border=0>
+        <TBODY>
+        <TR>
+          <TD><!--插入广告JS代码--></TD></TR></TBODY></TABLE>
+      <DIV style="FLOAT: left">
+      <SCRIPT language=javascript 
+      src="关于注册mscomm程序的编写 - VC编程.files/4.js"></SCRIPT>
+      </DIV>
+      <DIV style="CLEAR: right">
+      <P><FONT 
+      size=2>前一段用了mscomm控件编写程序，但是部署到新的设备上时需要手工注册控件，很是麻烦，能不能编写一个Winapi的程序自动注册呢？所以就自己写了一个程序。<BR>
+      <TABLE cellSpacing=0 cellPadding=0 width=160 align=left border=0>
+        <TBODY>
+        <TR>
+          <TD id=newbooks1><FONT 
+      color=red><B>正在装载数据……</B></FONT></TD></TR></TBODY></TABLE></FONT></P>
+      <P><FONT size=2>原理：如何手工来注册安装MSComm控件。 </FONT></P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" align=left><FONT size=2>　 
+      </FONT></P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" align=left><FONT 
+      size=2>　　第一步：将Mscomm.srg, 
+      Mscomm32.ocx,Mscomm32.dep三个文件复制到系统文件夹中。要注意的是，MSComm控件是要授权的，所以必须将其使用“执照”Licence 
+      在注册表中登记注册，下一步就是注册方法。至于为什么要这样做，可以看看下面的网页：</FONT><FONT color=#000000 
+      size=2>http://support.microsoft.com/support/kb/articles/q151/7/71.asp</FONT><FONT 
+      size=2> </FONT></P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" align=left><FONT size=2>　　 
+      </FONT></P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" align=left><FONT 
+      size=2>　　第二步：用Windows下的注册工具regsvr32注册该OCX控件，点击“开始”-&gt;"运行"，再在中填入（假设操作安装在C盘，WIN2000）： 
+      </FONT></P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" align=left><FONT 
+      size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Regsvr32&nbsp; </FONT><FONT 
+      color=#000000 size=2>C:\winnt\system32\Mscomm32.ocx</FONT><FONT size=2> 
+      </FONT></P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" align=left><FONT size=2>　 
+      </FONT></P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" align=left><FONT 
+      size=2>&nbsp;&nbsp; 
+      　第三步：在注册表中手工新建一个主键项：先在点击“开始”-&gt;"运行"，再在中填入regedit命令打开注册表，找到HKEY_CLASSES_ROOT\Licenses，在其中添加主键<BR>4250E830-6AC2-11cf-8ADB-00AA00C00905　并将内容设置为： 
+      </FONT></P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" align=left><FONT 
+      size=2>　　　　　　　kjljvjjjoquqmjjjvpqqkqmqykypoqjquoun </FONT></P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" align=left><FONT 
+      size=2>　　　（注：这项内容也可以用记事本程序打开Mscomm.srg文件看到）</FONT></P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" align=left><FONT 
+      size=2></FONT></P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" align=left><FONT 
+      size=2>这是手工注册的过程，非常繁琐。我得程序也是按照这个顺序执行的。</FONT></P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" align=left><FONT 
+      size=2>源代码：</FONT></P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" align=left>// <BR>#include 
+      &lt;<A class=channel_keylink 
+      href="http://www.23book.net/Server/Windows/Index.htm">windows</A>.h&gt;<BR>#include 
+      &lt;stdio.h&gt;<BR>#include &lt;string.h&gt;</P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" align=left>void CPFile(char 
+      file);<BR>void regsted();<BR>void regOCX();</P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" align=left></P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" align=left>void CPFile(char 
+      file[],char tarpath[])&nbsp;//将三个文件拷贝到系统目录<BR>{<BR>&nbsp;char 
+      tempsys[100];<BR>&nbsp;&nbsp;&nbsp; char *r;<BR>&nbsp;char *t;</P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" 
+      align=left>&nbsp;r=tarpath;<BR>&nbsp;t=tempsys;<BR>&nbsp;strcpy(t,r);</P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" align=left></P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" align=left>&nbsp;char 
+      path[256];<BR>&nbsp;char *p;<BR>&nbsp;char *q;<BR>&nbsp;&nbsp;&nbsp; 
+      GetModuleFileName(GetModuleHandle(NULL),path,sizeof(path));<BR>&nbsp;<BR>&nbsp;&nbsp;&nbsp; 
+      p = path;<BR>&nbsp;while(strchr(p,'\\')) <BR>&nbsp;{<BR>&nbsp;&nbsp;p = 
+      strchr(p,'\\');&nbsp;&nbsp;&nbsp; 
+      <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p++;&nbsp; 
+      <BR>&nbsp;}<BR>&nbsp;&nbsp;&nbsp; *p = '\0';</P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" 
+      align=left><BR>&nbsp;p=strchr(path,'\0');<BR>&nbsp;&nbsp;&nbsp; 
+      q=file;<BR>&nbsp;strcpy(p,q);<BR>&nbsp;&nbsp;&nbsp; <BR>&nbsp;&nbsp;&nbsp; 
+      p=strchr(tempsys,'\0');<BR>&nbsp;*p = '\\';<BR>&nbsp;&nbsp;p++;</P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" 
+      align=left><BR>&nbsp;&nbsp;&nbsp; 
+      q=file;<BR>&nbsp;strcpy(p,q);<BR>&nbsp;&nbsp;&nbsp; 
+      <BR>&nbsp;CopyFile(path,tempsys,FALSE);</P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" align=left>}</P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" align=left>void 
+      regsted()&nbsp;&nbsp; //将相关信息写入注册表<BR>{<BR>&nbsp;HKEY 
+      hKey;<BR>&nbsp;&nbsp;&nbsp; DWORD dwDip;<BR>&nbsp;LPBYTE owner_Get=new 
+      BYTE[80]; <BR>&nbsp;DWORD type_1=REG_SZ;<BR>&nbsp;DWORD cbData_1=80; 
+      <BR>&nbsp;long exist=RegQueryValueEx(HKEY_CLASSES_ROOT, 
+      "Licenses\\4250E830-6AC2-11cf-8ADB-00AA00C00905", NULL, &amp;type_1, 
+      owner_Get, &amp;cbData_1); </P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" 
+      align=left>&nbsp;&nbsp;&nbsp; 
+      if(exist!=ERROR_SUCCESS)<BR>&nbsp;{<BR>&nbsp;&nbsp; long ret =&nbsp; 
+      RegCreateKeyEx(HKEY_CLASSES_ROOT,"Licenses\\4250E830-6AC2-11cf-8ADB-00AA00C00905",0l,NULL,REG_OPTION_VOLATILE,KEY_ALL_ACCESS,NULL,&amp;hKey,&amp;dwDip);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      DWORD leng=37;</P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" align=left>&nbsp;&nbsp; 
+      char 
+      key[37]="kjljvjjjoquqmjjjvpqqkqmqykypoqjquoun";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      LPBYTE lpb=new 
+      BYTE(37);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for(int 
+      i=0;i&lt;37;i++) <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      lpb[i]=key[i];<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; long 
+      ret2 = RegSetValueEx(hKey,NULL,NULL,REG_SZ,lpb,leng);</P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" align=left>&nbsp;}<BR>}</P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" align=left><BR>void 
+      regOCX()//调用新进程注册组件<BR>{</P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" 
+      align=left>&nbsp;&nbsp;&nbsp; char commandline[256];<BR>&nbsp;char <A 
+      class=channel_keylink 
+      href="http://www.23book.net/Server/Windows/Index.htm">windows</A>dir[256];<BR>&nbsp;&nbsp;&nbsp; 
+      char lastcommandline[257];</P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" 
+      align=left>&nbsp;&nbsp;&nbsp; PROCESS_INFORMATION 
+      pi;<BR>&nbsp;&nbsp;&nbsp; STARTUPINFO si = 
+      {sizeof(si)};<BR>&nbsp;&nbsp;&nbsp; <BR>&nbsp;char 
+      OCXfile[50]="\\MSCOMM32.OCX";<BR>&nbsp;char 
+      REGfile[50]="\\regsvr32.exe";<BR>&nbsp;&nbsp;&nbsp; char 
+      *p,*q;<BR>&nbsp;&nbsp;&nbsp; GetSystemDirectory(<A class=channel_keylink 
+      href="http://www.23book.net/Server/Windows/Index.htm">windows</A>dir, 
+      256);<BR>&nbsp;p=commandline;<BR>&nbsp;q=<A class=channel_keylink 
+      href="http://www.23book.net/Server/Windows/Index.htm">windows</A>dir;<BR>&nbsp;strcpy(p,q);</P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" 
+      align=left><BR>&nbsp;p=strchr(commandline,'\0');<BR>&nbsp;&nbsp;&nbsp; 
+      q=OCXfile;<BR>&nbsp;strcpy(p,q);</P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" 
+      align=left>&nbsp;p=strchr(<A class=channel_keylink 
+      href="http://www.23book.net/Server/Windows/Index.htm">windows</A>dir,'\0');<BR>&nbsp;&nbsp;&nbsp; 
+      q=REGfile;<BR>&nbsp;strcpy(p,q);</P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" 
+      align=left><BR>&nbsp;p=commandline;<BR>&nbsp;q=&amp;lastcommandline[1];<BR>&nbsp;&nbsp;&nbsp; 
+      strcpy(q,p);<BR>&nbsp;&nbsp;&nbsp; lastcommandline[0]=' ';<BR>&nbsp;</P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" 
+      align=left>&nbsp;&nbsp;&nbsp; </P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" 
+      align=left>&nbsp;&nbsp;&nbsp; // 启动regsvr32.exe作为子进程<BR>&nbsp;&nbsp;&nbsp; 
+      BOOL ret = CreateProcess(windowsdir, lastcommandline, NULL, NULL, FALSE, 
+      0, NULL, NULL, &amp;si, &amp;pi);<BR>&nbsp;&nbsp;&nbsp; if(ret) 
+      <BR>&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp; 
+      CloseHandle(pi.hThread);<BR>&nbsp;&nbsp;&nbsp; 
+      <BR>&nbsp;&nbsp;&nbsp;&nbsp; CloseHandle(pi.hProcess);</P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" align=left>&nbsp;}</P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" align=left>}</P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" align=left>int APIENTRY 
+      WinMain(HINSTANCE 
+      hInstance,<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      HINSTANCE 
+      hPrevInstance,<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      LPSTR&nbsp;&nbsp;&nbsp;&nbsp; 
+      lpCmdLine,<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nCmdShow )<BR>{</P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" 
+      align=left>&nbsp;&nbsp;&nbsp; char sys[100];</P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" align=left></P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" 
+      align=left>&nbsp;&nbsp;&nbsp; char file1[20]="Mscomm32.ocx";<BR>&nbsp;char 
+      file2[20]="Mscomm32.dep";<BR>&nbsp;char file3[20]="Mscomm.srg";</P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" 
+      align=left>&nbsp;GetSystemDirectory(sys,100);</P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" 
+      align=left>&nbsp;&nbsp;&nbsp; 
+      CPFile(file1,sys);<BR>&nbsp;CPFile(file2,sys);<BR>&nbsp;CPFile(file3,sys);</P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" 
+      align=left>&nbsp;&nbsp;&nbsp; regOCX();<BR>&nbsp;<BR>&nbsp;regsted();</P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" align=left></P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" align=left>&nbsp;return 
+      0;<BR>}</P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" align=left>&nbsp;可执行文件：</P>
+      <P style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px" align=left>下载<BR></P></DIV>
+      <TABLE cellSpacing=0 cellPadding=2 width="100%" align=center 
+      bgColor=#f0f0f0 border=1>
+        <TBODY>
+        <TR>
+          <TD align=middle width="19%"><IMG height=15 
+            src="关于注册mscomm程序的编写 - VC编程.files/checkarticle.gif" width=15 
+            align=absMiddle> 站内文章搜索</TD>
+          <TD align=middle>
+            <SCRIPT language=JavaScript 
+            src="关于注册mscomm程序的编写 - VC编程.files/ShowSearchForm.js" 
+            type=text/JavaScript></SCRIPT>
+          </TD>
+          <TD align=right><A 
+            href="http://www.99inf.net/SoftwareDev/Search.asp"><U>高级搜索</U></A></TD></TR></TBODY></TABLE>
+      <SCRIPT language=javascript 
+      src="关于注册mscomm程序的编写 - VC编程.files/5.js"></SCRIPT>
+
+      <CENTER></CENTER></TD></TR>
+  <TR>
+    <TD class=Article_tdbgall align=right 
+      colSpan=2>文章录入：admin&nbsp;&nbsp;&nbsp;&nbsp;责任编辑：admin&nbsp;</TD></TR>
+  <TR>
+    <TD width=5></TD>
+    <TD width=752>
+      <LI>上一篇文章： <A class=LinkPrevArticle 
+      title="文章标题：get osnap points using objectarx&#13;&#10;作&nbsp;&nbsp;&nbsp;&nbsp;者：佚名&#13;&#10;更新时间：2007-7-1 13:55:30" 
+      href="http://www.99inf.net/SoftwareDev/VC/12332.htm">get&nbsp;osnap&nbsp;points&nbsp;using&nbsp;objectarx</A><BR>
+      <LI>下一篇文章： <A class=LinkNextArticle 
+      title="文章标题：在文件分割器中加入md5校验&#13;&#10;作&nbsp;&nbsp;&nbsp;&nbsp;者：佚名&#13;&#10;更新时间：2007-7-1 13:55:37" 
+      href="http://www.99inf.net/SoftwareDev/VC/12334.htm">在文件分割器中加入md5校验</A></LI></TD></TR>
+  <TR class=Article_tdbgall align=right>
+    <TD colSpan=2>【<A 
+      href="http://www.99inf.net/SoftwareDev/Comment.asp?ArticleID=12333" 
+      target=_blank>发表评论</A>】【<A 
+      href="http://www.99inf.net/User/User_Favorite.asp?Action=Add&amp;ChannelID=1004&amp;InfoID=12333" 
+      target=_blank>加入收藏</A>】【<A 
+      href="http://www.99inf.net/SoftwareDev/SendMail.asp?ArticleID=12333" 
+      target=_blank>告诉好友</A>】【<A 
+      href="http://www.99inf.net/SoftwareDev/Print.asp?ArticleID=12333" 
+      target=_blank>打印此文</A>】【<A 
+  href="javascript:window.close();">关闭窗口</A>】</TD></TR></TBODY></TABLE>
+<TABLE class=center_tdbgall cellSpacing=0 cellPadding=0 width=760 align=center 
+border=0>
+  <TBODY>
+  <TR>
+    <TD class=main_shadow></TD></TR></TBODY></TABLE><!--文章显示代码结束--><!--最新热点、最新推荐、相关文章代码开始-->
+<TABLE class=center_tdbgall style="WORD-BREAK: break-all" cellSpacing=0 
+cellPadding=0 width=760 align=center border=0>
+  <TBODY>
+  <TR>
+    <TD class=main_title_282 width="33%"><B>最新热点</B></TD>
+    <TD width=5 rowSpan=2></TD>
+    <TD class=main_title_282 width="33%"><B>最新推荐</B></TD>
+    <TD width=5 rowSpan=2></TD>
+    <TD class=main_title_282 width="33%"><B>相关文章</B></TD></TR>
+  <TR>
+    <TD class=main_tdbg_760 vAlign=top height=100>
+      <SCRIPT language=javascript 
+      src="关于注册mscomm程序的编写 - VC编程.files/Article_Hot3.js"></SCRIPT>
+    </TD>
+    <TD class=main_tdbg_760 vAlign=top width="33%">&nbsp;<A class="" 
+      title=directx&nbsp;图形接口指南（1） 
+      href="http://www.99inf.net/SoftwareDev/VC/22528.htm" 
+      target=_blank>directx&nbsp;图形接口指南（…</A><BR>&nbsp;<A class="" 
+      title=win2k下的api函数的拦截 href="http://www.99inf.net/SoftwareDev/VC/12515.htm" 
+      target=_blank>win2k下的api函数的拦截</A><BR>&nbsp;<A class="" 
+      title="用crypto  api  实现公钥加密，私钥解密" 
+      href="http://www.99inf.net/SoftwareDev/VC/12462.htm" 
+      target=_blank>用crypto&nbsp;&nbsp;api&nbsp;&nbsp;实现公钥…</A><BR>&nbsp;<A 
+      class="" title=根据别人的md5源码封装的一个类 
+      href="http://www.99inf.net/SoftwareDev/VC/12460.htm" 
+      target=_blank>根据别人的md5源码封装的…</A><BR>&nbsp;<A class="" 
+      title=vc中使用gdi+合并jpg图片 
+      href="http://www.99inf.net/SoftwareDev/VC/12400.htm" 
+      target=_blank>vc中使用gdi+合并jpg图片</A><BR>&nbsp;<A class="" 
+      title="document/view的交互 -- 文件读写操作" 
+      href="http://www.99inf.net/SoftwareDev/VC/12390.htm" 
+      target=_blank>document/view的交互&nbsp;--…</A><BR>&nbsp;<A class="" 
+      title=windows下的函数hook技术 
+      href="http://www.99inf.net/SoftwareDev/VC/12359.htm" 
+      target=_blank>windows下的函数hook技术</A><BR>&nbsp;<A class="" 
+      title="windows api函数大全一" 
+      href="http://www.99inf.net/SoftwareDev/VC/12286.htm" 
+      target=_blank>windows&nbsp;api函数大全一</A><BR>&nbsp;<A class="" 
+      title="用vc 6.0实现串行通信的三种方法" 
+      href="http://www.99inf.net/SoftwareDev/VC/12282.htm" 
+      target=_blank>用vc&nbsp;6.0实现串行通信的…</A><BR>&nbsp;<A class="" 
+      title=vc++技术内幕（第四版）笔记(1~2章) 
+      href="http://www.99inf.net/SoftwareDev/VC/12263.htm" 
+      target=_blank>vc++技术内幕（第四版）…</A><BR></TD>
+    <TD class=main_tdbg_760 vAlign=top width="33%">
+      <LI><A class=LinkArticleCorrelative 
+      title="文章标题：关于java Applet&#13;&#10;作&nbsp;&nbsp;&nbsp;&nbsp;者：佚名&#13;&#10;更新时间：2007-9-12 17:21:16" 
+      href="http://www.99inf.net/SoftwareDev/Java/55138.htm">关于java&nbsp;Applet</A><BR>
+      <LI><A class=LinkArticleCorrelative 
+      title="文章标题：[ZT]关于用jar打包（分享）&#13;&#10;作&nbsp;&nbsp;&nbsp;&nbsp;者：佚名&#13;&#10;更新时间：2007-9-12 17:21:00" 
+      href="http://www.99inf.net/SoftwareDev/Java/55126.htm">[ZT]关于用jar打包（分享）</A><BR>
+      <LI><A class=LinkArticleCorrelative 
+      title="文章标题：java中关于时间日期操作的常用函数&#13;&#10;作&nbsp;&nbsp;&nbsp;&nbsp;者：佚名&#13;&#10;更新时间：2007-9-12 17:20:48" 
+      href="http://www.99inf.net/SoftwareDev/Java/55119.htm">java中关于时间日期操作的常…</A><BR>
+      <LI><A class=LinkArticleCorrelative 
+      title="文章标题：SPRING+STRUTS+HIBERNATE登录注册例子&#13;&#10;作&nbsp;&nbsp;&nbsp;&nbsp;者：佚名&#13;&#10;更新时间：2007-9-12 17:20:29" 
+      href="http://www.99inf.net/SoftwareDev/Java/55108.htm">SPRING+STRUTS+HIBERNATE登录…</A><BR>
+      <LI><A class=LinkArticleCorrelative 
+      title="文章标题：一个关于Comparator的使用例子&#13;&#10;作&nbsp;&nbsp;&nbsp;&nbsp;者：佚名&#13;&#10;更新时间：2007-9-12 17:20:23" 
+      href="http://www.99inf.net/SoftwareDev/Java/55100.htm">一个关于Comparator的使用例…</A><BR>
+      <LI><A class=LinkArticleCorrelative 
+      title="文章标题：关于JSP的隐式对象的使用（供初学者参考）&#13;&#10;作&nbsp;&nbsp;&nbsp;&nbsp;者：佚名&#13;&#10;更新时间：2007-9-12 17:19:59" 
+      href="http://www.99inf.net/SoftwareDev/Java/55083.htm">关于JSP的隐式对象的使用（供…</A><BR>
+      <LI><A class=LinkArticleCorrelative 
+      title="文章标题：关于Linux下C/C++程序编译&#13;&#10;作&nbsp;&nbsp;&nbsp;&nbsp;者：佚名&#13;&#10;更新时间：2007-9-12 17:18:21" 
+      href="http://www.99inf.net/SoftwareDev/VC/55078.htm">关于Linux下C/C++程序编译</A><BR>
+      <LI><A class=LinkArticleCorrelative 
+      title="文章标题：进程防杀与屏蔽WIN 、alt+tab、ctrl+esc等键的方法&#13;&#10;作&nbsp;&nbsp;&nbsp;&nbsp;者：佚名&#13;&#10;更新时间：2007-9-12 17:18:17" 
+      href="http://www.99inf.net/SoftwareDev/VC/55075.htm">进程防杀与屏蔽WIN&nbsp;、alt+ta…</A><BR>
+      <LI><A class=LinkArticleCorrelative 
+      title="文章标题：关于CTreeCtrlr的＝NM_DBLCLK、=NM_RCLICK的用法&#13;&#10;作&nbsp;&nbsp;&nbsp;&nbsp;者：佚名&#13;&#10;更新时间：2007-9-12 17:18:17" 
+      href="http://www.99inf.net/SoftwareDev/VC/55074.htm">关于CTreeCtrlr的＝NM_DBLCL…</A><BR>
+      <LI><A class=LinkArticleCorrelative 
+      title="文章标题：关于Ｃ#中委托的学习&#13;&#10;作&nbsp;&nbsp;&nbsp;&nbsp;者：佚名&#13;&#10;更新时间：2007-9-12 17:17:37" 
+      href="http://www.99inf.net/SoftwareDev/VC/55049.htm">关于Ｃ#中委托的学习</A><BR></LI></TD></TR></TBODY></TABLE>
+<TABLE class=center_tdbgall cellSpacing=0 cellPadding=0 width=760 align=center 
+border=0>
+  <TBODY>
+  <TR>
+    <TD class=main_shadow></TD></TR></TBODY></TABLE><!--最新热点、最新推荐、相关文章代码结束--><!--网友评论代码开始-->
+<TABLE class=center_tdbgall style="WORD-BREAK: break-all" cellSpacing=0 
+cellPadding=0 width=760 align=center border=0>
+  <TBODY>
+  <TR class=main_title_760>
+    <TD height=25>　　<STRONG>网友评论：</STRONG><SPAN 
+      style="COLOR: #ff0000">（只显示最新10条。评论内容只代表网友观点，与本站立场无关！） </SPAN></TD></TR>
+  <TR>
+    <TD class=main_tdbg_760>
+      <SCRIPT language=javascript src=""></SCRIPT>
+    </TD></TR></TBODY></TABLE>
+<TABLE class=center_tdbgall cellSpacing=0 cellPadding=0 width=760 align=center 
+border=0>
+  <TBODY>
+  <TR>
+    <TD class=main_shadow></TD></TR></TBODY></TABLE><!--网友评论代码结束--><!-- ********网页中部代码结束******** --><!-- ********网页底部代码开始******** -->
+<TABLE cellSpacing=0 cellPadding=0 width=778 align=center border=0>
+  <TBODY>
+  <TR>
+    <TD class=menu_bottombg align=middle>| <A class=Bottom 
+      onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.23book.net');" 
+      href="http://www.99inf.net/SoftwareDev/VC/12333.htm#">设为首页</A> | <A 
+      class=Bottom 
+      href="javascript:window.external.addFavorite('http://www.23book.net','网络学院');">加入收藏</A> 
+      | <A class=Bottom href="mailto:ysy.sh@163.com">联系站长</A> | <A class=Bottom 
+      href="http://www.99inf.net/FriendSite/Index.asp" target=_blank>友情链接</A> | 
+      <A class=Bottom href="http://www.99inf.net/Copyright.asp" 
+      target=_blank>版权申明</A> | <A class=Bottom 
+      href="http://www.99inf.net/Announcelist.asp" target=_blank>网站公告</A> | <A 
+      class=Bottom href="http://www.99inf.net/SiteMap/Article1.htm" 
+      target=_blank>网站地图</A> | <A class=Bottom 
+      href="http://www.99inf.net/Admin/Admin_Index.asp" 
+      target=_blank>管理登录</A>&nbsp;|&nbsp;</TD></TR>
+  <TR>
+    <TD class=bottom_bg height=80>
+      <TABLE cellSpacing=0 cellPadding=0 width="90%" align=center border=0>
+        <TBODY>
+        <TR>
+          <TD><IMG height=80 
+            src="关于注册mscomm程序的编写 - VC编程.files/bottom_left.gif" width=9></TD>
+          <TD align=middle width="80%">网络学院&copy;2007 www.23book.net 
+            <BR>为您提供web编程,vb编程,vc编程,服务器架设管理,数据库设计等方面的知识
+            <SCRIPT language=javascript 
+            src="关于注册mscomm程序的编写 - VC编程.files/click.htm"></SCRIPT>
+
+            <SCRIPT src="关于注册mscomm程序的编写 - VC编程.files/urchin.js" 
+            type=text/javascript>
+</SCRIPT>
+
+            <SCRIPT type=text/javascript>
+_uacct = "UA-2276205-1";
+urchinTracker();
+</SCRIPT>
+             站长：<A href="mailto:ysy.sh@163.com">David</A> </TD>
+          <TD align=right><IMG height=80 
+            src="关于注册mscomm程序的编写 - VC编程.files/bottom_r.gif" 
+        width=9></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><!-- ********网页底部代码结束******** --><NOSCRIPT><IFRAME 
+src="关于注册mscomm程序的编写 - VC编程.files/CAUVW9UZ.htm" width=0 
+height=0></IFRAME></IFRAME></NOSCRIPT></BODY></HTML>
