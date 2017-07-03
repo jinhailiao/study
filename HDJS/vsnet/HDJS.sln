@@ -1,0 +1,48 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HDJS", "hdjs\HDJS.vcproj", "{76D7242E-8C6B-42AB-B6F4-343C9C18AB21}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E3F60671-BC4B-4920-A46E-16C86718CBFB} = {E3F60671-BC4B-4920-A46E-16C86718CBFB}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dyjc", "dyjc\dyjc.vcproj", "{E3F60671-BC4B-4920-A46E-16C86718CBFB}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "unitest", "unitest\unitest.vcproj", "{DAAD3ACE-E7E4-4518-B1B4-15E4314F5B68}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E3F60671-BC4B-4920-A46E-16C86718CBFB} = {E3F60671-BC4B-4920-A46E-16C86718CBFB}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WinosClient", "winclint\WinosClient.vcproj", "{B8EB3BC9-09F7-4CB2-9130-8F6F152D5EFF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E3F60671-BC4B-4920-A46E-16C86718CBFB} = {E3F60671-BC4B-4920-A46E-16C86718CBFB}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{76D7242E-8C6B-42AB-B6F4-343C9C18AB21}.Debug.ActiveCfg = Debug|Win32
+		{76D7242E-8C6B-42AB-B6F4-343C9C18AB21}.Debug.Build.0 = Debug|Win32
+		{76D7242E-8C6B-42AB-B6F4-343C9C18AB21}.Release.ActiveCfg = Release|Win32
+		{76D7242E-8C6B-42AB-B6F4-343C9C18AB21}.Release.Build.0 = Release|Win32
+		{E3F60671-BC4B-4920-A46E-16C86718CBFB}.Debug.ActiveCfg = Debug|Win32
+		{E3F60671-BC4B-4920-A46E-16C86718CBFB}.Debug.Build.0 = Debug|Win32
+		{E3F60671-BC4B-4920-A46E-16C86718CBFB}.Release.ActiveCfg = Release|Win32
+		{E3F60671-BC4B-4920-A46E-16C86718CBFB}.Release.Build.0 = Release|Win32
+		{DAAD3ACE-E7E4-4518-B1B4-15E4314F5B68}.Debug.ActiveCfg = Debug|Win32
+		{DAAD3ACE-E7E4-4518-B1B4-15E4314F5B68}.Debug.Build.0 = Debug|Win32
+		{DAAD3ACE-E7E4-4518-B1B4-15E4314F5B68}.Release.ActiveCfg = Release|Win32
+		{DAAD3ACE-E7E4-4518-B1B4-15E4314F5B68}.Release.Build.0 = Release|Win32
+		{B8EB3BC9-09F7-4CB2-9130-8F6F152D5EFF}.Debug.ActiveCfg = Debug|Win32
+		{B8EB3BC9-09F7-4CB2-9130-8F6F152D5EFF}.Debug.Build.0 = Debug|Win32
+		{B8EB3BC9-09F7-4CB2-9130-8F6F152D5EFF}.Release.ActiveCfg = Release|Win32
+		{B8EB3BC9-09F7-4CB2-9130-8F6F152D5EFF}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

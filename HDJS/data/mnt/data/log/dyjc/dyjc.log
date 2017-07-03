@@ -1,0 +1,33 @@
+[I]dyjc(10-21 17:28:57) httx1(pid=0) is starting...,ExecTimes=1
+[W]dyjc(10-21 17:29:07) Start httx1 succeed!!!
+[I]dyjc(10-21 17:29:11) httx2(pid=0) is starting...,ExecTimes=1
+[W]dyjc(10-21 17:29:13) Start httx2 succeed!!!
+[I]dyjc(10-21 17:29:13) httx3(pid=0) is starting...,ExecTimes=1
+[W]dyjc(10-21 17:29:13) Start httx3 succeed!!!
+[I]dyjc(10-21 17:29:13) dbcj(pid=0) is starting...,ExecTimes=1
+[W]dyjc(10-21 17:29:13) Start dbcj succeed!!!
+[I]dyjc(10-21 17:29:13) ppp(pid=0) is starting...,ExecTimes=1
+[W]dyjc(10-21 17:29:13) Start ppp succeed!!!
+[I]dyjc(10-21 17:29:13) dman(pid=0) is starting...,ExecTimes=1
+[W]dyjc(10-21 17:29:13) Start dman succeed!!!
+[I]dyjc(10-21 17:29:13) uiman(pid=0) is starting...,ExecTimes=1
+[W]dyjc(10-21 17:29:13) Start uiman succeed!!!
+[W]dyjc(10-21 17:29:51) Daemon is going to work......
+[I]dyjc(10-21 17:29:51) httx1(pid=0) is starting...,ExecTimes=1
+[W]dyjc(10-21 17:29:51) Start httx1 succeed!!!
+[I]dyjc(10-21 17:29:51) httx2(pid=0) is starting...,ExecTimes=1
+[W]dyjc(10-21 17:29:51) Start httx2 succeed!!!
+[I]dyjc(10-21 17:29:51) httx3(pid=0) is starting...,ExecTimes=1
+[W]dyjc(10-21 17:29:51) Start httx3 succeed!!!
+[I]dyjc(10-21 17:29:51) dbcj(pid=0) is starting...,ExecTimes=1
+[W]dyjc(10-21 17:29:51) Start dbcj succeed!!!
+[I]dyjc(10-21 17:29:51) ppp(pid=0) is starting...,ExecTimes=1
+[W]dyjc(10-21 17:29:51) Start ppp succeed!!!
+[I]dyjc(10-21 17:29:51) dman(pid=0) is starting...,ExecTimes=1
+[W]dyjc(10-21 17:29:51) Start dman succeed!!!
+[I]dyjc(10-21 17:29:51) uiman(pid=0) is starting...,ExecTimes=1
+[W]dyjc(10-21 17:29:51) Start uiman succeed!!!
+[W]dyjc(10-21 17:32:23) Daemon is going to work......
+[W]dyjc(10-21 18:50:24) Daemon is going to work......
+[W]dyjc(10-21 18:56:43) Daemon is going to work......
+[I]dyjc(10-21 18:56:58) httx1(pid=0) is starting...,ExecTimes=1

@@ -1,0 +1,133 @@
+#!/bin/sh
+#
+# Script to initiate a ppp connection. This is the first part of the
+# pair of scripts. This is not a secure pair of scripts as the codes
+# are visible with the 'ps' command.  However, it is simple.
+#
+# These are the parameters. Change as needed.
+#echo "Gprs ppp on with setting:PortNo=$1,Baud=$2,TeleNo=$3,Apn=$4,User=$5,Pwd=$6,CheckInterS=$7,CheckFailTimes=$8"
+
+
+if [ "$1" = "" ]; then
+	let TTY_ID=7
+else
+	let TTY_ID=$1-1
+fi
+let PORT_NO=TTY_ID+1
+if [ "$2" = "" ]; then
+	let BAUD=19200
+else
+	let BAUD=$2
+fi
+TTY_NAME="ttyS$TTY_ID"
+
+DEVICE=ppp0
+if [ -r /var/run/$DEVICE.pid ]; then
+	echo "Kill pppd"
+	kill -KILL `cat /var/run/$DEVICE.pid`
+	rm -f /var/run/$DEVICE.pid
+fi
+
+if [ -r /var/run/pppd2.tdb ]; then
+	rm -f /var/run/pppd2.tdb
+fi
+
+if [ -r /var/lock/LCK..$TTY_NAME ]; then
+	rm -f /var/lock/LCK..$TTY_NAME
+fi
+
+/sbin/route del -net default                      #  2004-02-16 added
+
+TELEPHONE=$3
+if [ "$3" = "[Default]" ]; then
+	TELEPHONE=*99***1\#
+fi
+if [ "$3" = "" ]; then
+	TELEPHONE=*99***1\#
+fi
+
+APN=$4
+if [ "$4" = "[Default]" ]; then
+	APN="GZPSFK01.GD"
+fi
+if [ "$4" = "" ]; then
+	APN="GZPSFK01.GD"
+fi
+
+ACCOUNT=$5
+if [ "$5" = "[Default]" ]; then
+	ACCOUNT=		# The account name for logon (as in 'George Burns')
+fi
+if [ "$5" = "" ]; then
+	ACCOUNT=
+fi
+
+PASSWORD=$6
+if [ "$6" = "[Default]" ]; then
+	PASSWORD=		# The password for this account (and 'Gracie Allen')
+fi
+if [ "$6" = "" ]; then
+	PASSWORD=
+fi
+
+CHECK_INTER=""
+CHECK_FAIL_TIMES=""
+
+if [ ! "$7" = "" ]; then
+	if [ ! "$8" = "" ]; then
+		CHECK_INTER="lcp-echo-interval $7"
+		CHECK_FAIL_TIMES="lcp-echo-failure $8"
+	fi
+fi
+
+MODEM_TYPE=$9
+if [ "$9" = "[Default]" ]; then
+	MODEM_TYPE="COMMON"
+fi
+if [ "$9" = "" ]; then
+	MODEM_TYPE="COMMON"
+fi
+
+echo "***********************Gprs ppp on with setting:"
+echo "PortNo=$PORT_NO(DevName=$TTY_NAME),Baud=$BAUD,TeleNo=$TELEPHONE,Apn=$APN,User=,Pwd=$PASSWORD,CheckInterS=$CHECK_INTER,CheckFailTimes=$CHECK_FAIL_TIMES,ModemType=$MODEM_TYPE"
+
+#echo "CheckInter=$CHECK_INTER  CheckFailTimes=$CHECK_FAIL_TIMES"
+
+LOCAL_IP=0.0.0.0	# Local IP address if known. Dynamic = 0.0.0.0
+REMOTE_IP=0.0.0.0	# Remote IP address if desired. Normally 0.0.0.0
+NETMASK=255.255.255.0	# The proper netmask if needed
+#
+# Export them so that they will be available at 'ppp_gprs_dialer.srt' time.
+export TELEPHONE ACCOUNT PASSWORD APN
+# 
+# This is the location of the script which dials the phone and logs
+# in.  Please use the absolute file name as the $PATH variable is not
+# used on the connect option.  (To do so on a 'root' account would be
+# a security hole so don't ask.)
+#
+
+DIALER_SCRIPT=/mnt/dyjc/script/ppp_gprs_dialer_$MODEM_TYPE.srt
+HUNGUP_SCRIPT=/mnt/dyjc/script/ppp_off_hangup.srt
+#
+# Initiate the connection
+# 
+# I put most of the common options on this command. Please, don't
+# forget the 'lock' option or some programs such as mgetty will not
+# work. The asyncmap and escape will permit the PPP link to work with
+# a telnet or rlogin connection. You are welcome to make any changes
+# as desired. Don't use the 'defaultroute' option if you currently
+# have a default route to an ethernet gateway.
+#
+
+#test only 
+#while [ 1 ] ; do 
+#sleep 2
+#echo "pppd run..."
+#done 
+
+echo "APN of GPRS PPP is \"$APN\""
+exec /usr/sbin/pppd  nodetach debug lock modem crtscts /dev/$TTY_NAME $BAUD \
+	asyncmap 20A0000 escape FF kdebug 0 $LOCAL_IP:$REMOTE_IP \
+	noipdefault netmask $NETMASK defaultroute \
+	connect $DIALER_SCRIPT $CHECK_INTER $CHECK_FAIL_TIMES disconnect $HUNGUP_SCRIPT
+

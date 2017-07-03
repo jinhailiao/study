@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# This is part 2 of the ppp-on script. It will perform the connection
+# protocol for the desired connection.
+#
+exec /usr/sbin/chat -e						\
+	TIMEOUT		3				\
+	ABORT		'\nBUSY\r'			\
+	ABORT		'\nNO ANSWER\r'			\
+	ABORT		'\nRINGING\r\n\r\nRINGING\r'	\
+	ABORT		'\nERROR\r'			\
+	''		'+++AT'				\
+	TIMEOUT		3				\
+	OK		'ATH0'           

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+echo "On dyjc data reset..."
+echo "Deleting task data files..."
+rm -f /mnt/data/task/*
+echo "Deleting alarm data files..."
+rm -f /mnt/data/alarm/*
+echo "Deleting status data file..."
+rm -f /mnt/dyjc/set/status.dat
+
