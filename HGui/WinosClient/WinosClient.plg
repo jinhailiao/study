@@ -1,0 +1,170 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: app - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\Kingsea\LOCALS~1\Temp\RSP1C4.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /I "..\..\os" /I "..\..\kernel" /I "..\..\app" /I "..\..\image" /I "..\..\control" /I "..\..\msgbox" /D "_LIB" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "PCSIM" /Fp"Debug/app.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\learn\HGui\app\ctrldemo.c"
+"E:\learn\HGui\app\desktop.c"
+"E:\learn\HGui\app\HaiLogo.c"
+"E:\learn\HGui\app\picdemo.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Kingsea\LOCALS~1\Temp\RSP1C4.tmp" 
+Creating command line "link.exe -lib /nologo /out:"Debug\app.lib"  .\Debug\ctrldemo.obj .\Debug\desktop.obj .\Debug\HaiLogo.obj .\Debug\picdemo.obj "
+<h3>Output Window</h3>
+Compiling...
+ctrldemo.c
+desktop.c
+HaiLogo.c
+picdemo.c
+Creating library...
+<h3>
+--------------------Configuration: kernel - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\Kingsea\LOCALS~1\Temp\RSP1C5.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /I "..\..\os" /I "..\..\kernel" /I "..\..\app" /I "..\..\image" /I "..\..\control" /I "..\..\msgbox" /D "_LIB" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "PCSIM" /Fp"Debug/kernel.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\learn\HGui\kernel\haievent.c"
+"E:\learn\HGui\kernel\haikey.c"
+"E:\learn\HGui\kernel\haimain.c"
+"E:\learn\HGui\kernel\haiscene.c"
+"E:\learn\HGui\kernel\schedule.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Kingsea\LOCALS~1\Temp\RSP1C5.tmp" 
+Creating command line "link.exe -lib /nologo /out:"Debug\kernel.lib"  .\Debug\haievent.obj .\Debug\haikey.obj .\Debug\haimain.obj .\Debug\haiscene.obj .\Debug\schedule.obj "
+<h3>Output Window</h3>
+Compiling...
+haievent.c
+haikey.c
+haimain.c
+haiscene.c
+schedule.c
+Creating library...
+<h3>
+--------------------Configuration: os - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\Kingsea\LOCALS~1\Temp\RSP1C6.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /I "..\..\os" /I "..\..\kernel" /I "..\..\app" /I "..\..\image" /I "..\..\control" /I "..\..\msgbox" /D "_LIB" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "PCSIM" /Fp"Debug/os.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\learn\HGui\msgbox\dialog.c"
+"E:\learn\HGui\control\haicaret.c"
+"E:\learn\HGui\control\haictrl.c"
+"E:\learn\HGui\os\haifile.c"
+"E:\learn\HGui\os\haigdi.c"
+"E:\learn\HGui\os\haigui.c"
+"E:\learn\HGui\os\hailib.c"
+"E:\learn\HGui\os\haimem.c"
+"E:\learn\HGui\os\haipalette.c"
+"E:\learn\HGui\os\haitime.c"
+"E:\learn\HGui\os\haiwnd.c"
+"E:\learn\HGui\control\inputmth.c"
+"E:\learn\HGui\msgbox\msgbox.c"
+"E:\learn\HGui\os\resource.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Kingsea\LOCALS~1\Temp\RSP1C6.tmp" 
+Creating temporary file "C:\DOCUME~1\Kingsea\LOCALS~1\Temp\RSP1C7.tmp" with contents
+[
+/nologo /out:"Debug\os.lib" 
+.\Debug\dialog.obj
+.\Debug\haicaret.obj
+.\Debug\haictrl.obj
+.\Debug\haifile.obj
+.\Debug\haigdi.obj
+.\Debug\haigui.obj
+.\Debug\hailib.obj
+.\Debug\haimem.obj
+.\Debug\haipalette.obj
+.\Debug\haitime.obj
+.\Debug\haiwnd.obj
+.\Debug\inputmth.obj
+.\Debug\msgbox.obj
+.\Debug\resource.obj
+]
+Creating command line "link.exe -lib @C:\DOCUME~1\Kingsea\LOCALS~1\Temp\RSP1C7.tmp"
+<h3>Output Window</h3>
+Compiling...
+dialog.c
+haicaret.c
+haictrl.c
+haifile.c
+haigdi.c
+haigui.c
+hailib.c
+haimem.c
+haipalette.c
+haitime.c
+haiwnd.c
+inputmth.c
+msgbox.c
+resource.c
+Creating library...
+<h3>
+--------------------Configuration: image - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\Kingsea\LOCALS~1\Temp\RSP1C8.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /I "..\..\os" /I "..\..\kernel" /I "..\..\app" /I "..\..\image" /I "..\..\control" /I "..\..\msgbox" /D "_LIB" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "PCSIM" /Fp"Debug/app.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\learn\HGui\image\haibmp.c"
+"E:\learn\HGui\image\haipcx.c"
+"E:\learn\HGui\image\hgico.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Kingsea\LOCALS~1\Temp\RSP1C8.tmp" 
+Creating command line "link.exe -lib /nologo /out:"Debug\image.lib"  .\Debug\haibmp.obj .\Debug\haipcx.obj .\Debug\hgico.obj "
+<h3>Output Window</h3>
+Compiling...
+haibmp.c
+haipcx.c
+hgico.c
+Creating library...
+<h3>
+--------------------Configuration: WinosClient - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo"Debug/WinosClient.res" /d "_DEBUG" "E:\learn\HGui\WinosClient\WinosClient.rc"" 
+Creating temporary file "C:\DOCUME~1\Kingsea\LOCALS~1\Temp\RSP1C9.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /I "..\..\os" /I "..\..\kernel" /I "..\..\app" /I "..\..\image" /I "..\..\control" /I "..\..\msgbox" /D "_WINDOWS" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "PCSIM" /FR"Debug/" /Fp"Debug/WinosClient.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\learn\HGui\WinosClient\WinosClient.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Kingsea\LOCALS~1\Temp\RSP1C9.tmp" 
+Creating temporary file "C:\DOCUME~1\Kingsea\LOCALS~1\Temp\RSP1CA.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /I "..\..\os" /I "..\..\kernel" /I "..\..\app" /I "..\..\image" /I "..\..\control" /I "..\..\msgbox" /D "_WINDOWS" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "PCSIM" /FR"Debug/" /Fp"Debug/WinosClient.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\learn\HGui\WinosClient\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Kingsea\LOCALS~1\Temp\RSP1CA.tmp" 
+Creating temporary file "C:\DOCUME~1\Kingsea\LOCALS~1\Temp\RSP1CB.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /incremental:yes /pdb:"Debug/WinosClient.pdb" /debug /machine:I386 /out:"Debug/WinosClient.exe" /pdbtype:sept 
+.\Debug\StdAfx.obj
+.\Debug\WinosClient.obj
+.\Debug\WinosClient.res
+.\app\Debug\app.lib
+.\kernel\Debug\kernel.lib
+.\os\Debug\os.lib
+.\image\Debug\image.lib
+]
+Creating command line "link.exe @C:\DOCUME~1\Kingsea\LOCALS~1\Temp\RSP1CB.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+WinosClient.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+WinosClient.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
