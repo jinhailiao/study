@@ -1,0 +1,263 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(中华人民共和国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#include ""res\\GW007.rc2""  // 非 Microsoft Visual C++ 编辑过的资源\r\n"
+    "#include ""afxres.rc""         // 标准组件\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\GW007.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 63
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "关于 GW007"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "GW007 Version 1.2",IDC_STATIC,40,10,62,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2012",IDC_STATIC,40,25,61,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,16,WS_GROUP
+    LTEXT           "廖金海 HAISOFT",IDC_STATIC,41,39,52,8
+    GROUPBOX        "帮助",IDC_STATIC,107,23,121,33
+    LTEXT           "    编辑框能输十六进制则按十六进制输入，否则按十进制输入。",
+                    IDC_STATIC,112,32,114,17
+END
+
+IDD_GW007_DIALOG DIALOGEX 0, 0, 322, 199
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "GW007"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_COMBO_PROTOCOL,11,17,103,65,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_AFN,127,17,181,64,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_SEQ,44,46,40,14,ES_NUMBER
+    EDITTEXT        IDC_EDIT_DELAY,51,64,26,14,ES_NUMBER
+    EDITTEXT        IDC_EDIT_MASTER,155,45,40,14,ES_NUMBER
+    EDITTEXT        IDC_EDIT_TERM,155,64,40,14,ES_UPPERCASE
+    EDITTEXT        IDC_EDIT_DA,230,45,25,14,ES_UPPERCASE
+    EDITTEXT        IDC_EDIT_DT,230,64,25,14,ES_UPPERCASE
+    EDITTEXT        IDC_EDIT_PN,280,45,28,14,ES_NUMBER
+    EDITTEXT        IDC_EDIT_FN,280,64,28,14,ES_NUMBER
+    EDITTEXT        IDC_EDIT_PW,11,92,297,13,ES_UPPERCASE
+    EDITTEXT        IDC_EDIT_DATA,11,122,297,13,ES_UPPERCASE | 
+                    ES_AUTOHSCROLL
+    PUSHBUTTON      "组帧(&Z)",IDC_BUTTON_MAKE,271,144,40,14
+    EDITTEXT        IDC_EDIT_FRAME,10,152,252,37,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_READONLY
+    PUSHBUTTON      "重置(&R)",IDC_BUTTON_RESET,271,161,40,14
+    PUSHBUTTON      "关于(&U)",IDC_BUTTON_ABOUT,271,178,40,14
+    LTEXT           "终端(&T)",IDC_STATIC,129,67,25,8
+    LTEXT           "主站(&M)",IDC_STATIC,128,48,26,8
+    LTEXT           "帧序号(&S)",IDC_STATIC,13,49,31,8
+    LTEXT           "PN(&P)",IDC_STATIC,259,47,19,8
+    LTEXT           "FN(&F)",IDC_STATIC,259,67,18,8
+    LTEXT           "DT(&L)",IDC_STATIC,209,67,19,8
+    LTEXT           "DA(&D)",IDC_STATIC,209,48,20,8
+    GROUPBOX        "数据帧(&B)",IDC_STATIC,7,141,260,51
+    GROUPBOX        "数据单元(&E)",IDC_STATIC,7,112,308,29
+    GROUPBOX        "消息认证码(&H)",IDC_STATIC,7,82,308,28
+    GROUPBOX        "信息点类",IDC_STATIC,206,36,109,47
+    GROUPBOX        "应用层功能码(&A)",IDC_STATIC,125,7,190,28
+    GROUPBOX        "规约规范(&G)",IDC_STATIC,7,7,112,28
+    GROUPBOX        "地址设置",IDC_STATIC,123,36,76,46
+    GROUPBOX        "时间标签",IDC_STATIC,7,36,112,46
+    LTEXT           "传输延时(&C)",IDC_STATIC,12,67,38,8
+    LTEXT           "分",IDC_STATIC,81,66,8,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080403a8"
+        BEGIN
+            VALUE "CompanyName", "TODO: <公司名>"
+            VALUE "FileDescription", "TODO: <文件说明>"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "GW007.exe"
+            VALUE "LegalCopyright", "TODO: (C) <公司名>。保留所有权利。"
+            VALUE "OriginalFilename", "GW007.exe"
+            VALUE "ProductName", "TODO: <产品名>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "翻译", 0x804, 936
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 56
+    END
+
+    IDD_GW007_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 315
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 192
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_ACCELERATOR_MAIN ACCELERATORS 
+BEGIN
+    "U",            IDC_BUTTON_ABOUT,       VIRTKEY, ALT, NOINVERT
+    "Z",            IDC_BUTTON_MAKE,        VIRTKEY, ALT, NOINVERT
+    "R",            IDC_BUTTON_RESET,       VIRTKEY, ALT, NOINVERT
+    "A",            IDC_COMBO_AFN,          VIRTKEY, ALT, NOINVERT
+    "G",            IDC_COMBO_PROTOCOL,     VIRTKEY, ALT, NOINVERT
+    "D",            IDC_EDIT_DA,            VIRTKEY, ALT, NOINVERT
+    "E",            IDC_EDIT_DATA,          VIRTKEY, ALT, NOINVERT
+    "C",            IDC_EDIT_DELAY,         VIRTKEY, ALT, NOINVERT
+    "L",            IDC_EDIT_DT,            VIRTKEY, ALT, NOINVERT
+    "F",            IDC_EDIT_FN,            VIRTKEY, ALT, NOINVERT
+    "B",            IDC_EDIT_FRAME,         VIRTKEY, ALT, NOINVERT
+    "M",            IDC_EDIT_MASTER,        VIRTKEY, ALT, NOINVERT
+    "P",            IDC_EDIT_PN,            VIRTKEY, ALT, NOINVERT
+    "H",            IDC_EDIT_PW,            VIRTKEY, ALT, NOINVERT
+    "S",            IDC_EDIT_SEQ,           VIRTKEY, ALT, NOINVERT
+    "T",            IDC_EDIT_TERM,          VIRTKEY, ALT, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 GW007(&A)..."
+END
+
+#endif    // 中文(中华人民共和国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE 4, 2
+#pragma code_page(936)
+#include "res\GW007.rc2"  // 非 Microsoft Visual C++ 编辑过的资源
+#include "afxres.rc"         // 标准组件
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
