@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lua", "lua\lua.vcproj", "{EC5CFA61-56F4-47D4-A9E3-198CEC02DD4F}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "main", "main\main.vcproj", "{856B6C94-9473-4D27-A998-D4C475AA20D2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EC5CFA61-56F4-47D4-A9E3-198CEC02DD4F} = {EC5CFA61-56F4-47D4-A9E3-198CEC02DD4F}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{EC5CFA61-56F4-47D4-A9E3-198CEC02DD4F}.Debug.ActiveCfg = Debug|Win32
+		{EC5CFA61-56F4-47D4-A9E3-198CEC02DD4F}.Debug.Build.0 = Debug|Win32
+		{EC5CFA61-56F4-47D4-A9E3-198CEC02DD4F}.Release.ActiveCfg = Release|Win32
+		{EC5CFA61-56F4-47D4-A9E3-198CEC02DD4F}.Release.Build.0 = Release|Win32
+		{856B6C94-9473-4D27-A998-D4C475AA20D2}.Debug.ActiveCfg = Debug|Win32
+		{856B6C94-9473-4D27-A998-D4C475AA20D2}.Debug.Build.0 = Debug|Win32
+		{856B6C94-9473-4D27-A998-D4C475AA20D2}.Release.ActiveCfg = Release|Win32
+		{856B6C94-9473-4D27-A998-D4C475AA20D2}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
