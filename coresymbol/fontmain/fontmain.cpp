@@ -5,6 +5,7 @@
 
 extern unsigned char *fontmat8x16[];
 extern unsigned char *fontmat16x16[];
+extern unsigned char *fontmat12x12[];
 
 
 int _tmain(int argc, _TCHAR* argv[])
@@ -31,6 +32,16 @@ int _tmain(int argc, _TCHAR* argv[])
 			fwrite(fontmat8x16[i], 16, 1, fp0816);
 	}
 	fclose(fp0816);
+
+	FILE *fp1212 = fopen("sym1212.bin", "wb");
+	for (int i = 0; i <= '~'-' '; i++)
+	{
+		if (fontmat12x12[i] == NULL)
+			fwrite(buffer, 24, 1, fp1212);
+		else
+			fwrite(fontmat12x12[i], 24, 1, fp1212);
+	}
+	fclose(fp1212);
 
 	return 0;
 }

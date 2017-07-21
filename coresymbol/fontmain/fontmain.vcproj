@@ -116,6 +116,9 @@
 				RelativePath=".\fontmain.cpp">
 			</File>
 			<File
+				RelativePath="..\mat12x12.cpp">
+			</File>
+			<File
 				RelativePath="..\mat16x16.cpp">
 			</File>
 			<File
@@ -143,6 +146,9 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
 			<File
 				RelativePath=".\stdafx.h">
+			</File>
+			<File
+				RelativePath="..\sym12x12.h">
 			</File>
 			<File
 				RelativePath="..\sym16x16.h">
